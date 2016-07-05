@@ -9,11 +9,18 @@ History.pushState is used for navigation which means this plugin will only work 
 
 1. Create a leaflet map. Checkout Leaflets [Quick Start Guide](http://leafletjs.com/examples/quick-start.html) for a basic map example.
 
+2. Include Leaflet.Permalink.min.js
 ```html
 <script src="https://cdn.rawgit.com/MarcChasse/Leaflet.Permalink/master/Leaflet.Permalink.min.js"></script>
 ```
 3. Add the following code to the map initialization:
 ```javascript
+var mappos = L.Permalink.getMapLocation();
+var map = L.map('map', {
+    center: mappos.center,
+    zoom: mappos.zoom
+});
+L.Permalink.setupMapPermalink(map);
 ```
 ## Complete Example
 ```html
@@ -28,6 +35,7 @@ History.pushState is used for navigation which means this plugin will only work 
 <body>
 	<div id="map"></div>
 	<script src="https://npmcdn.com/leaflet@1.0.0-rc.1/dist/leaflet.js"></script>
+	<script src="https://cdn.rawgit.com/MarcChasse/Leaflet.Permalink/master/Leaflet.Permalink.min.js"></script>
 	<script>
 	    osm = new L.TileLayer(
 	    	'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
