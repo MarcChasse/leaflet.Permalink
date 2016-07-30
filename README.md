@@ -54,7 +54,7 @@ Here is everything you need to get this up and running. Copy and past the follow
 </body>
 </html>
 ```
-Checkout the [DEMO](https://marcchasse.github.io/Leaflet.Permalink/)
+Checkout the [DEMO](https://marcchasse.github.io/leaflet.Permalink/)
 
 ## Options
 `L.Permalink.getMapLocation`
